@@ -1,0 +1,17 @@
+# Backend
+bin/
+obj/
+.vs/
+*.user
+*.suo
+appsettings.Development.json
+
+# Frontend (para después)
+node_modules/
+dist/
+.angular/
+
+# General
+.vscode/
+.env
+appsettings.Development.json
