@@ -9,5 +9,6 @@ public class OrdenReposicion
 
     public DateTime FechaSolicitud { get; set; }
     public int Cantidad { get; set; }
-    public string Estado { get; set; } = "Pendiente";
+
+    public EstadoOrden Estado { get; set; } = EstadoOrden.Pendiente;
 }

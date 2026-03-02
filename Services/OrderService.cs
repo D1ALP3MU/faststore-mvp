@@ -30,7 +30,7 @@ public class OrderService : IOrderService
             ProductoId = productoId,
             Cantidad = cantidad,
             FechaSolicitud = DateTime.Now,
-            Estado = "Pendiente"
+            Estado = EstadoOrden.Pendiente
         };
 
         _context.OrdenesReposicion.Add(orden);
