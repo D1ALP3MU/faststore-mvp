@@ -45,7 +45,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+//app.UseHttpsRedirection(); // Deshabilitado para pruebas locales con Angular
 
 app.MapControllers();
 
