@@ -1,0 +1,54 @@
+<h2>Inventario</h2>
+
+<input
+  type="text"
+  placeholder="Buscar producto..."
+  [(ngModel)]="searchTerm"
+  (input)="filterProducts()"
+/>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Stock Actual</th>
+      <th>Stock Mínimo</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of filteredProducts"
+        [ngStyle]="{'background-color': product.stockActual < product.stockMinimo ? '#ffcccc' : 'white'}">
+
+      <td>
+        {{ product.nombre }}
+        <span *ngIf="product.stockActual < product.stockMinimo">⚠️</span>
+      </td>
+
+      <td>{{ product.categoriaNombre }}</td>
+
+      <td>{{ product.stockActual }}</td>
+      <td>{{ product.stockMinimo }}</td>
+
+      <td>
+        <button (click)="openModal(product)">Reponer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- MODAL SIMPLE -->
+<div *ngIf="showModal" style="background:#00000088; position:fixed; inset:0; display:flex; align-items:center; justify-content:center;">
+  <div style="background:white; padding:20px; width:300px;">
+    <h3>Reponer {{ selectedProduct?.nombre }}</h3>
+
+    <label>Cantidad:</label>
+    <input type="number" [(ngModel)]="quantity" />
+
+    <br><br>
+
+    <button (click)="createOrder()">Confirmar</button>
+    <button (click)="showModal=false">Cancelar</button>
+  </div>
+</div>

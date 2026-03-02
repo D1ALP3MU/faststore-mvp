@@ -29,5 +29,13 @@ public class OrdersController : ControllerBase
             return BadRequest(new { message = ex.Message });
         }
     }
+
+    // GET: /api/orders
+    // [HttpGet]
+    // public async Task<IActionResult> GetOrders()
+    // {
+    //     var orders = await _service.GetOrdersAsync();
+    //     return Ok(orders);
+    // }
 }
 

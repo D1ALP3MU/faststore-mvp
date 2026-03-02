@@ -1,5 +1,6 @@
 using FastStore.Api.Data;
 using FastStore.Api.Models;
+//using Microsoft.EntityFrameworkCore;
 
 namespace FastStore.Api.Services;
 
@@ -38,5 +39,13 @@ public class OrderService : IOrderService
 
         return orden;
     }
+
+    //Para obtener las ordenes de reposición
+    // public async Task<List<OrdenReposicion>> GetOrdersAsync()
+    // {
+    //     return await _context.OrdenesReposicion
+    //         .Include(o => o.Producto)
+    //         .ToListAsync();
+    // }
 
 }
