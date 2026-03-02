@@ -67,7 +67,7 @@ faststore-mvp/
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone <[TU_REPO_URL](https://github.com/D1ALP3MU/faststore-mvp.git)>
+git clone https://github.com/D1ALP3MU/faststore-mvp.git
 cd faststore-mvp
 ```
 > 💡 Repositorio público para evaluación técnica.
@@ -206,6 +206,4 @@ contiene:
 ## 👨‍💻 Autor
 
 **Diego Pérez**
-Prueba técnica – Auxiliar de Desarrollo (.NET & Angular)
-
 ---
