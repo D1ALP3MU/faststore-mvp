@@ -26,6 +26,9 @@ public class OrderService : IOrderService
         if (producto.StockActual > producto.StockMinimo)
             throw new ArgumentException("El producto no se encuentra en stock crítico.");
 
+        //Actualizar el stock actual del producto (opcional, dependiendo de la lógica de negocio)
+        producto.StockActual += cantidad;
+
         var orden = new OrdenReposicion
         {
             ProductoId = productoId,

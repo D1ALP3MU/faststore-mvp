@@ -9,8 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;// Evita problemas de referencia circular al serializar entidades relacionadas
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());// Agrega el convertidor para serializar enums como strings
     });
 
 builder.Services.AddEndpointsApiExplorer();
@@ -39,6 +39,7 @@ var app = builder.Build();
 // USAR CORS (ANTES de MapControllers)
 app.UseCors("AllowAngular");
 
+// Validar la conexión a la base de datos al iniciar la aplicación
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
